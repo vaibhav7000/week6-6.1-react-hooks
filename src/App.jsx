@@ -3,6 +3,7 @@ import React, { Fragment, useState } from "react";
 import HeaderWithButton from "./Components/HeaderWithButton.jsx";
 import TodoInputMemo from "./Components/TodoInput.jsx";
 import { AllTodosMemo } from "./Components/AllTodos.jsx";
+import './App.css'
 
 
 function App () {
@@ -110,3 +111,9 @@ function TodoApp() {
 export { TodoApp };
 
 // Updation of state-variable leads to re-rendering of Parent + Child Components (if not using memo then all Children get re-render ) (if using memo with Children than only that Children will re-render whose state variable changes + Parent)
+
+// If we define a "normal variable" in Components, if the component re-renders the variable will pick up again its intial value that is assigned to it
+
+// "key" is used to maintains the ordering of the elements by the React
+
+// Wrapper-Components -> Theses components takes other Components as inputs and using this syntax (props.children) thus get render on the screen. Helpful when creating a Component that provide similar background sytling
