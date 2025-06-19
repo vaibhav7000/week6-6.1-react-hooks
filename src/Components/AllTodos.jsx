@@ -37,3 +37,25 @@ function SingleTodo({ title, description }) {
 const AllTodosMemo = memo(AllTodos);
 
 export {AllTodosMemo};
+
+// Hooks were introducted in functional components to minic / replace the life-cycle methods of the class-base-components ( hooks where introdcued to hook into the life-cycle methods of the class-base-components )
+
+//  useEffect is kind of replace of the onComponentMount (mount means -> component gets intially render on the screen ), => useEffect is used to call a function / side effect after the component gets rendered on the screen ( mounts on the screen )
+
+// Syntax to use useEffect for side effects ( calling function after the component mounts )
+//  useEffect(sideEffect_Function, [depenpency array ( contains props as state variable or diretly state_variables)])
+
+// 1. useEffect(function) -> no-dependency_array => this side_effect will be called everytime when the component gets re-render or render
+
+// 2. useEffect(function, []) -> empty dependency array -> the side_effect function will be called on once when the component mounts 
+
+// 3. useEffect(function,[ state_variables ])
+// the dependency_array contains either state_variables or props but passed as state_variables (=> when the state variable changes the side_effect will be called)
+
+// IMPORTANT SYNTAX OF useEffect hook
+// the side_effect function can also return a function ( cleanup function ), this function is generally returned to clean the previous side_effect services (event-listners, setTimeout, setInterval things )
+
+// Execution of the cleanup function
+// 1. when the component gets re-render again and if there is any chance that the useEffect will be called then before the side_effect function executes the cleanup function will be executed
+
+// 2. When the component gets unmount / removeded from the DOM => cleanup function will be executed
