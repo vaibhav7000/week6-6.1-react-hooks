@@ -59,3 +59,13 @@ export {AllTodosMemo};
 // 1. when the component gets re-render again and if there is any chance that the useEffect will be called then before the side_effect function executes the cleanup function will be executed
 
 // 2. When the component gets unmount / removeded from the DOM => cleanup function will be executed
+
+
+// re-rendering (updation of the webpage) will happen when the state_variables changes => The component that has the state_variable will be re-renders (will be called again by react but with updated state) + its Child Components. To make optimize website there should be less components that get re-render => only those component should be updated that is using the state_variable. This will be implemented using "memo"
+
+// "memo" stops the unecessary re-renders of the child components when parent component re-renders, the child component will only gets re-rendered when the state_variable passed to it gets changed.
+
+
+// useCallback Hook ( for functions only )
+// Whenever the component re-renders, "the normal_variables and functions" present inside the components gets re-created => new references are created  => if functions are passed to the child components they will also get re-render because the refernce changes, =>
+    // useCallback should wrap the function, this will be lead to no new creation of the callback function when the parent re-renders + if using memo with child component then child will also not get re-render

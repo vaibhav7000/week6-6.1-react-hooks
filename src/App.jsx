@@ -46,7 +46,7 @@ export default App;
 
 // We want less components to get re-render, lesser the components re-render / refresh more optimal website it will be
 
-// TO make the optimal React app (less re-renders), maintain the state variable at the lowest level parent / or use React-memo -> This Hook will not upadte the children if the props pass to them does not changed
+// TO make the optimal React app (less re-renders), maintain the state variable at the lowest level parent / or use React-memo -> This will not upadte the children if the props pass to them does not changed
 
 
 const HeaderMemo = React.memo(function({title}) {
